@@ -285,7 +285,7 @@ open class TLPhotosPickerViewController: UIViewController {
         }
     }
     
-    private func requestAuthorization() {
+    func requestAuthorization() {
         if #available(iOS 14.0, *) {
             PHPhotoLibrary.requestAuthorization(for:  .readWrite) { [weak self] status in
                 self?.processAuthorization(status: status)
@@ -457,7 +457,7 @@ extension TLPhotosPickerViewController {
         updatePresentLimitedLibraryButton()
     }
     
-    private func reloadCollectionView() {
+    func reloadCollectionView() {
         guard self.focusedCollection != nil else {
             return
         }
